@@ -16,9 +16,19 @@ def count_characters(path_to_book):
             character_dict[letter] += 1
         else: 
             character_dict[letter] = 1
-
     return character_dict
 
+def sort_dict(path_to_book):
+    dict = count_characters(path_to_book)
+    sorted_dict = []
+    for d in dict:
+        if d.isalpha() == True:
+            sorted_dict.append({"char": d, "num": dict[d]})
+    sorted_dict.sort(reverse=True, key=sort_on)
+    for s in sorted_dict:
+        print(f"{s["char"]}: {s["num"]}")
 
+def sort_on(dict):
+    return dict["num"]
             
 
