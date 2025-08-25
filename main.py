@@ -1,4 +1,4 @@
-from stats import get_word_count, count_characters, sort_dict
+from stats import get_word_count, sort_and_print_dict
 def main():
     book_path="books/frankenstein.txt"
     word_count_text = f"Found {get_word_count(book_path)} total words"
@@ -7,7 +7,7 @@ def main():
     print("----------- Word Count ---------")
     print(word_count_text)
     print("--------- Character Count -------")
-    sort_dict(book_path)
+    sort_and_print_dict(book_path)
     print("============= END ===============")
 
 

@@ -18,14 +18,14 @@ def count_characters(path_to_book):
             character_dict[letter] = 1
     return character_dict
 
-def sort_dict(path_to_book):
-    dict = count_characters(path_to_book)
-    sorted_dict = []
-    for d in dict:
-        if d.isalpha() == True:
-            sorted_dict.append({"char": d, "num": dict[d]})
-    sorted_dict.sort(reverse=True, key=sort_on)
-    for s in sorted_dict:
+def sort_and_print_dict(path_to_book):
+    dict_to_sort = count_characters(path_to_book)
+    sorted_lists = []
+    for entry in dict_to_sort:
+        if entry.isalpha():
+            sorted_lists.append({"char": entry, "num": dict_to_sort[entry]})
+    sorted_lists.sort(reverse=True, key=sort_on)
+    for s in sorted_lists:
         print(f"{s["char"]}: {s["num"]}")
 
 def sort_on(dict):
